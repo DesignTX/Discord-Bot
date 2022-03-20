@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
+const config = require('./config.json');
 
 
 client.once('ready', () => {
@@ -9,4 +9,4 @@ client.once('ready', () => {
 
 
 
-client.login('')
+client.login(config.token);
