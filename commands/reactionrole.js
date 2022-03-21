@@ -34,7 +34,7 @@ module.exports = {
                 + `${mokamokaEmoji} Mokamoka Card\n`
                 + `${noGoodItemEmoji} All Other Votes`);
 
-        let messageEmbed = await message.channel.send(embed);
+        let messageEmbed = await message.channel.send({ embeds: [embed] });
         messageEmbed.react(sianEmoji);
         messageEmbed.react(seriaEmoji);
         messageEmbed.react(kaysarrEmoji);

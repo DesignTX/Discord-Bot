@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] }, { partials: ["MESSAGE", "CHANNEL", "REACTION" ]});
 
 const config = require('./config.json');
 
