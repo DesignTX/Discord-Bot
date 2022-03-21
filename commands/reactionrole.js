@@ -22,19 +22,18 @@ module.exports = {
         const kaysarrEmoji = '🟥';
 
         let embed = new Discord.MessageEmbed()
-        .setColor('#e42643')
-        .setTitle('ITEM ROLES')
-        .setDescription('Choose roles based on what items you would like to get pinged for!\n\n'
-            + `${sianEmoji} Sian Card\n`
-            + `${seriaEmoji} Seria Card\n`
-            + `${kaysarrEmoji} Kaysarr Card\n`
-            + `${weiEmoji} Wei Card\n`
-            + `${madnickEmoji} Madnick Card\n`
-            + `${legendaryRapportEmoji} Legendary Rapport\n`
-            + `${mokamokaEmoji} Mokamoka Card\n`
-            + `${noGoodItemEmoji} All Other Votes\n`
-        );
-        
+            .setColor('#e42643')
+            .setTitle('ITEM ROLES')
+            .setDescription('Choose roles based on what items you would like to get pinged for!\n\n'
+                + `${sianEmoji} Sian Card\n`
+                + `${seriaEmoji} Seria Card\n`
+                + `${kaysarrEmoji} Kaysarr Card\n`
+                + `${weiEmoji} Wei Card\n`
+                + `${madnickEmoji} Madnick Card\n`
+                + `${legendaryRapportEmoji} Legendary Rapport\n`
+                + `${mokamokaEmoji} Mokamoka Card\n`
+                + `${noGoodItemEmoji} All Other Votes\n`
+
         let messageEmbed = await message.channel.send(embed);
         messageEmbed.react(sianEmoji);
         messageEmbed.react(seriaEmoji);
@@ -44,5 +43,6 @@ module.exports = {
         messageEmbed.react(legendaryRapportEmoji);
         messageEmbed.react(mokamokaEmoji);
         messageEmbed.react(noGoodItemEmoji);
+        );
     }
 }
