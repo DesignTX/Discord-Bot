@@ -32,7 +32,7 @@ module.exports = {
                 + `${madnickEmoji} Madnick Card\n`
                 + `${legendaryRapportEmoji} Legendary Rapport\n`
                 + `${mokamokaEmoji} Mokamoka Card\n`
-                + `${noGoodItemEmoji} All Other Votes\n`
+                + `${noGoodItemEmoji} All Other Votes`);
 
         let messageEmbed = await message.channel.send(embed);
         messageEmbed.react(sianEmoji);
@@ -43,6 +43,6 @@ module.exports = {
         messageEmbed.react(legendaryRapportEmoji);
         messageEmbed.react(mokamokaEmoji);
         messageEmbed.react(noGoodItemEmoji);
-        );
+        
     }
 }
