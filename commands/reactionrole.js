@@ -2,7 +2,7 @@ module.exports = {
     name: 'reactionrole',
     description: "Sets up a reaction role message!",
     async execute(message, args, Discord, client) {
-        const channel = '955232461133062167';
+        const channel = '955225281742913586';
         const noGoodItemRole = message.guild.roles.cache.find(role => role.name === "No Good Items");
         const seriaRole = message.guild.roles.cache.find(role => role.name === "Seria");
         const legendaryRapportRole = message.guild.roles.cache.find(role => role.name === "Legendary Rapport");
@@ -44,5 +44,41 @@ module.exports = {
         messageEmbed.react(mokamokaEmoji);
         messageEmbed.react(noGoodItemEmoji);
         
+        client.on('messageReactionAdd', async (reaction, user) => {
+            if (reaction.message.partial) await reaction.message.fetch();
+            if (reaction.partial) await reaction.fetch();
+            if (user.bot) return;
+            if (!reaction.message.guild) return;
+
+            if (reaction.message.channel.id == channel) {
+                if(reaction.emoji.name === sianEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(sianRole);
+                }
+                if(reaction.emoji.name === seriaEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(seriaRole);
+                }
+                if(reaction.emoji.name === kaysarrEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(kaysarrRole);
+                }
+                if(reaction.emoji.name === weiEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(weiRole);
+                }
+                if(reaction.emoji.name === madnickEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(madnickRole);
+                }
+                if(reaction.emoji.name === legendaryRapportEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(legendaryRapportRole);
+                }
+                if(reaction.emoji.name === mokamokaEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(mokamokaRole);
+                }
+                if(reaction.emoji.name === noGoodItemEmoji) {
+                    await reaction.message.guild.members.cache.get(user.id).roles.add(noGoodItemRole);
+                }
+            } else {
+                return;
+            }
+            
+        });
     }
 }
